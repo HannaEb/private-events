@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>PrivateEvents</title>
-    <% if session[:user_id] %>
-      <h5>Logged in as <%= @user.name %></h5>
+    <% if current_user %>
+      <h7>Logged in as <%= current_user.name %></h7>
     <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
