@@ -4,6 +4,10 @@
     <title>PrivateEvents</title>
     <% if current_user %>
       <h7>Logged in as <%= current_user.name %></h7>
+      <%= link_to 'Logout', logout_path %>
+    <% else %>
+      <%= link_to 'Login', login_path %>
+      <%= link_to 'Sign up', new_user_path %>
     <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
