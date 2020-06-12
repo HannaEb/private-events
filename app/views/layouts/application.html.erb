@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>PrivateEvents</title>
+    <% if session[:user_id] %>
+      <h5>Logged in as <%= @user.name %></h5>
+    <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +13,7 @@
   </head>
 
   <body>
+
     <%= yield %>
   </body>
 </html>
