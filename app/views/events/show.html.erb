@@ -1,3 +1,18 @@
-<p>
-  <%= @event.creator.name %>
-</p>
+<h1><%= @event.title %></h1>
+<tr>
+  <td><%= @event.description %></td>
+  <td><%= @event.location %></td>
+  <td><%= @event.date %></td>
+  <td><%= @event.start_time %></td>
+  <td><%= @event.finish_time %></td>
+  <td><%= @event.creator.name %></td></br>
+</tr>
+
+
+
+
+
+<h3>Guest List</h3>
+<% @event.attendees.each do |a| %>
+  <%= a.name %>
+<% end %>

@@ -1,5 +1,16 @@
-<h1>My Events:</h1>
+<h1>My Events</h1>
 
-<% @user.created_events.each do |e| %>
+<h3>My Upcoming Events</h3>
+<% @upcoming_events.each do |e| %>
   <%= e.title %>
+<% end %>
+
+<h3>My Past Events</h3>
+<% @past_events.each do |e| %>
+  <%= e.title %>
+<% end %>
+
+<h3>Created Events</h3>
+<% @user.created_events.each do |e| %>
+  <%= e.title %></br>
 <% end %>
