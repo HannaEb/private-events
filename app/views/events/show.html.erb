@@ -8,7 +8,7 @@
   <td><%= @event.creator.name %></td></br>
 </tr>
 
-
+<%= button_to 'Attend', attend_event_path(@event), method: :post %>
 
 
 

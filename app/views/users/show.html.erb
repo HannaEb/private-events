@@ -1,16 +1,22 @@
 <h1>My Events</h1>
 
-<h3>My Upcoming Events</h3>
-<% @upcoming_events.each do |e| %>
-  <%= e.title %>
+<% if @user.attended_events.future_events.any? %>
+  <h3>My Upcoming Events</h3>
+  <% @user.attended_events.future_events.each do |e| %>
+    <%= e.title %>
+  <% end %>
 <% end %>
 
-<h3>My Past Events</h3>
-<% @past_events.each do |e| %>
-  <%= e.title %>
+<% if @user.attended_events.previous_events.any? %>
+  <h3>My Past Events</h3>
+  <% @@user.attended_events.past_events.each do |e| %>
+    <%= e.title %>
+  <% end %>
 <% end %>
 
-<h3>Created Events</h3>
-<% @user.created_events.each do |e| %>
-  <%= e.title %></br>
+<% if @user.created_events.any? %>
+  <h3>My Created Events</h3>
+  <% @user.created_events.each do |e| %>
+    <%= e.title %></br>
+  <% end %>
 <% end %>

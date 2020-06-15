@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>PrivateEvents</title>
+    <%= link_to 'Events', root_path %>
     <% if current_user %>
       <h7>Logged in as <%= current_user.name %></h7>
       <%= link_to 'Logout', logout_path %>
