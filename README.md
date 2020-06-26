@@ -1,24 +1,34 @@
-# README
+# Private Events
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About
 
-Things you may want to cover:
+Private Events is an application similar to Eventbrite and focusses on many-to-many relationships. Users can sign up, create and attend events and send and accept invitations.
 
-* Ruby version
+It is part of The Odin Project's Ruby on Rails Curriculum (http://www.theodinproject.com).
 
-* System dependencies
 
-* Configuration
+## Progress
 
-* Database creation
+Most features have been implemented. However, users cannot yet send out or accept invitations to events.
 
-* Database initialization
 
-* How to run the test suite
+## How to Use
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ git clone https://github.com/HannaEb/private-events.git
+$ cd private-events
+$ bundle
+$ rake db:migrate
+$ rails server
+```
+In your browser, enter http://localhost:3000/
 
-* Deployment instructions
 
-* ...
+## Testing
+
+Not yet implemented.
+
+
+## Author
+
+HannaEb

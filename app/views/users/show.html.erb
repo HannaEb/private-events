@@ -9,7 +9,7 @@
 
 <% if @user.attended_events.previous_events.any? %>
   <h3>My Past Events</h3>
-  <% @@user.attended_events.past_events.each do |e| %>
+  <% @user.attended_events.past_events.each do |e| %>
     <%= e.title %>
   <% end %>
 <% end %>
