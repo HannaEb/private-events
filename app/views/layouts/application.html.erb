@@ -2,14 +2,6 @@
 <html>
   <head>
     <title>PrivateEvents</title>
-    <%= link_to 'Events', root_path %>
-    <% if current_user %>
-      <h7>Logged in as <%= current_user.name %></h7>
-      <%= link_to 'Logout', logout_path %>
-    <% else %>
-      <%= link_to 'Login', login_path %>
-      <%= link_to 'Sign up', new_user_path %>
-    <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -18,7 +10,18 @@
   </head>
 
   <body>
-
-    <%= yield %>
+    <ul class="nav">
+      <li class="nav"><%= link_to 'Events', root_path %></li>
+      <% if current_user %>
+        <li class="nav", style="float:right"><%= link_to 'Logout', logout_path %></li>
+        <li id="nav", style="float:right">Logged in as <%= link_to current_user.name, current_user %></li>
+      <% else %>
+        <li class="nav", style="float:right"><%= link_to 'Sign up', new_user_path %></li>
+        <li class="nav", style="float:right"><%= link_to 'Login', login_path %></li>
+      <% end %>
+    </ul>
+    <div id="main">
+      <%= yield %>
+    </div>
   </body>
 </html>

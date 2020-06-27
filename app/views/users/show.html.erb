@@ -1,22 +1,38 @@
-<h1>My Events</h1>
+<h2>My Events</h2>
 
-<% if @user.attended_events.future_events.any? %>
-  <h3>My Upcoming Events</h3>
-  <% @user.attended_events.future_events.each do |e| %>
-    <%= e.title %>
-  <% end %>
-<% end %>
+<div>
+  <%= button_to "Create Event", new_event_path, method: :get, class: "button" %>
+</div>
 
-<% if @user.attended_events.previous_events.any? %>
-  <h3>My Past Events</h3>
-  <% @user.attended_events.past_events.each do |e| %>
-    <%= e.title %>
+<div>
+  <% if @user.attended_events.future_events.any? %>
+    <h3>My Upcoming Events</h3>
+    <ul>
+      <% @user.attended_events.future_events.each do |e| %>
+        <li><%= link_to e.title, e %></li>
+      <% end %>
+    </ul>
   <% end %>
-<% end %>
+</div>
 
-<% if @user.created_events.any? %>
-  <h3>My Created Events</h3>
-  <% @user.created_events.each do |e| %>
-    <%= e.title %></br>
+<div>
+  <% if @user.attended_events.previous_events.any? %>
+    <h3>My Past Events</h3>
+    <ul>
+      <% @user.attended_events.past_events.each do |e| %>
+        <li><%= link_to e.title, e %></li>
+      <% end %>
+    </ul>
   <% end %>
-<% end %>
+</div>
+
+<div>
+  <% if @user.created_events.any? %>
+    <h3>My Created Events</h3>
+    <ul>
+      <% @user.created_events.each do |e| %>
+        <li><%= link_to e.title, e %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

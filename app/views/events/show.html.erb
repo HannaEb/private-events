@@ -1,18 +1,39 @@
-<h1><%= @event.title %></h1>
-<tr>
-  <td><%= @event.description %></td>
-  <td><%= @event.location %></td>
-  <td><%= @event.date %></td>
-  <td><%= @event.start_time %></td>
-  <td><%= @event.finish_time %></td>
-  <td><%= @event.creator.name %></td></br>
-</tr>
+<h2><%= @event.title %></h2>
 
-<%= button_to 'Attend', attend_event_path(@event), method: :post %>
+<p>
+  <%= @event.description %>
+</p>
 
+<table class="events">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Start Time</th>
+      <th>Finish Time</th>
+      <th>Host</th>
+    </tr>
+  </thead>
+  <body>
+    <tr>
+      <td><%= @event.date %></td>
+      <td><%= @event.location %></td>
+      <td><%= @event.start_time %></td>
+      <td><%= @event.finish_time %></td>
+      <td><%= @event.creator.name %></td>
+    </tr>
+  </body>
+</table>
+
+<div>
+  <%= button_to 'Attend', attend_event_path(@event), method: :post, class: "button" %>
+</div>
 
 
 <h3>Guest List</h3>
-<% @event.attendees.each do |a| %>
-  <%= a.name %>
-<% end %>
+
+<ul class="guest">
+  <% @event.attendees.each do |a| %>
+    <li><%= a.name %></li>
+  <% end %>
+</ul>

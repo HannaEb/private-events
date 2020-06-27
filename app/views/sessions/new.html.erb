@@ -1,7 +1,8 @@
-<h1>Login</h1>
+<h2>Login</h2>
 
-<%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label :name  %>
-  <%= f.text_field :name  %></br>
-  <%= f.submit "Login"  %>
-<% end %>
+<div>
+  <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.text_field :name, class: "form_field", placeholder: "Username" %><br/>
+    <%= f.submit "Login", class: "button" %>
+  <% end %>
+</div>

@@ -1,3 +1,40 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.events td {
+  border-top: 1px solid #010c26;
+  padding: 5px;
+  padding-right: 32px;
+}
+
+.events th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+}
+
+td a {
+  text-decoration: none;
+  color: inherit;
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li a {
+  color: #04287a;
+  text-decoration: none;
+}
+
+li a:hover {
+  text-decoration: underline;
+}
