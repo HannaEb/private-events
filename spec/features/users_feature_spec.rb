@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'user can sign in and out' do
+feature 'user can sign up, log in and log out' do
 
   context 'user not signed in' do
     scenario 'should display a login and a sign up link' do
@@ -29,5 +29,33 @@ feature 'user can sign in and out' do
       expect(page).not_to have_link('Sign up')
     end
   end
+
+  context 'invalid details' do
+    scenario 'does not allow more than one user to sign up with the same username' do
+      sign_up
+      click_link('Logout')
+      click_link('Sign up')
+      fill_in('Username', with: 'Marley')
+      fill_in('Email', with: 'marley@example.com')
+      click_button('Create')
+      expect(current_path).to eq(new_user_path)
+    end
+
+    scenario 'does not allow user to sign up without username and email' do
+      visit('/')
+      click_link('Sign up')
+      click_button('Create')
+      expect(current_path).to eq(new_user_path)
+    end
+
+    scenario ' does not allow user to log in without username' do
+      visit('/')
+      click_link('Login')
+      click_button('Login')
+      expect(current_path).to eq(login_path)
+    end
+
+  end
+
 
 end
