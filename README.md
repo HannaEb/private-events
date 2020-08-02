@@ -6,7 +6,7 @@ Private Events is an application similar to Eventbrite and focusses on many-to-m
 
 It is part of The Odin Project's Ruby on Rails Curriculum (http://www.theodinproject.com).
 
-![](screen_shot.png)
+![](public/screen_shot.png)
 
 
 ## Progress
