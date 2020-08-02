@@ -17,7 +17,7 @@ feature 'user can sign up, log in and log out' do
   end
 
   context 'user signed in' do
-    before { sign_up }
+    before { sign_up_user_one }
 
     scenario 'should display a sign out link and user information' do
       expect(page).to have_link('Logout')
@@ -32,7 +32,7 @@ feature 'user can sign up, log in and log out' do
 
   context 'invalid details' do
     scenario 'does not allow more than one user to sign up with the same username' do
-      sign_up
+      sign_up_user_one
       click_link('Logout')
       click_link('Sign up')
       fill_in('Username', with: 'Marley')
