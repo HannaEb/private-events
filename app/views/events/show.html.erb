@@ -26,7 +26,9 @@
 </table>
 
 <div>
-  <%= button_to 'Attend', attend_event_path(@event), method: :post, class: "button" %>
+  <% if current_user %>
+    <%= button_to 'Attend', attend_event_path(@event), method: :post, class: "button" %>
+  <% end %>
 </div>
 
 
