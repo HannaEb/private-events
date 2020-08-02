@@ -56,6 +56,4 @@ feature 'user can sign up, log in and log out' do
     end
 
   end
-
-
 end

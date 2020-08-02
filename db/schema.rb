@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_12_190933) do
+ActiveRecord::Schema.define(version: 2020_08_02_112119) do
 
   create_table "attendances", force: :cascade do |t|
     t.integer "attendee_id"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2020_06_12_190933) do
     t.string "title"
     t.text "description"
     t.string "location"
-    t.datetime "date"
+    t.date "date"
     t.time "start_time"
     t.time "finish_time"
     t.datetime "created_at", null: false

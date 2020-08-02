@@ -19,7 +19,7 @@
   <% if @user.attended_events.previous_events.any? %>
     <h3>My Past Events</h3>
     <ul>
-      <% @user.attended_events.past_events.each do |e| %>
+      <% @user.attended_events.previous_events.each do |e| %>
         <li><%= link_to e.title, e %></li>
       <% end %>
     </ul>
